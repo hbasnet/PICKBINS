@@ -65,6 +65,8 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'api.Account'
+
 WSGI_APPLICATION = 'backendapi.wsgi.application'
 
 CORS_ORIGIN_WHITELIST = [
@@ -114,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 #ACCOUNT_USER_EMAIL_FIELD = 'email'
 #ACCOUNT_LOGOUT_ON_GET = True
 
-#AUTH_USER_MODEL = 'api.User'
+
 
 # REST_AUTH_SERIALIZERS = {
 #    "USER_DETAILS_SERIALIZER": "api.serializers.CustomUserDetailsSerializer",
