@@ -107,24 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
-#ACCOUNT_AUTHENTICATION_METHOD = 'email'
-
-#ACCOUNT_EMAIL_REQUIRED = True
-#ACCOUNT_UNIQUE_EMAIL = True
-#ACCOUNT_USERNAME_REQUIRED = True
-#ACCOUNT_USER_EMAIL_FIELD = 'email'
-#ACCOUNT_LOGOUT_ON_GET = True
-
-
-
-# REST_AUTH_SERIALIZERS = {
-#    "USER_DETAILS_SERIALIZER": "api.serializers.CustomUserDetailsSerializer",
-# }
-# REST_AUTH_REGISTER_SERIALIZERS = {
-#    "REGISTER_SERIALIZER": "api.serializers.CustomRegisterSerializer",
-# }
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 

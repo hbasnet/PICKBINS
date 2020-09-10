@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from .serializers import RegistrationSerializer
 
 
-@api_view(['POST',])
+@api_view(['POST', ])
 def registration_view(request):
     serializer = RegistrationSerializer(data=request.data)
     data = {}
@@ -18,20 +18,3 @@ def registration_view(request):
     else:
         data = serializer.errors
     return Response(data)
-
-
-
-
-# class UserViewSet(viewsets.ModelViewSet):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-
-
-#from django.shortcuts import render
-#from rest_framework import generics
-#from rest_auth.registration.views import RegisterView
-#from .models import User
-
-
-# class CustomRegisterView(RegisterView):
-#    queryset = User.objects.all()
