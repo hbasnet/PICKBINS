@@ -68,7 +68,7 @@ function Auth() {
                     <Button className="btn-lg btn-dark btn-block" onClick={loginClicked}>
                         Login
                 </Button>
-                    <p onClick={() => setIsLoginView(false)}>Register</p>
+                    <p onClick={() => setIsLoginView(false)}>Register here!</p>
                 </div>
                 :
                 <div>
