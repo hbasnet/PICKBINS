@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Col, Row } from 'reactstrap';
 import './form.css';
 import { useCookies } from 'react-cookie';
 import { Link } from 'react-router-dom';
@@ -54,10 +54,10 @@ function Auth() {
         <Form className="login-form">
             {isLoginView ?
                 <div>
-                    <h1>LOGIN TO PICKBINS</h1>
+                    <h1>PICKBINS LOGIN</h1>
                     <FormGroup>
                         <Label for="Username">Email</Label>
-                        <Input type="username" name="username" id="Username" placeholder="Username" value={username}
+                        <Input type="username" name="username" id="Username" placeholder="Email" value={username}
                             onChange={evt => setUsername(evt.target.value)} />
                     </FormGroup>
                     <FormGroup>
@@ -68,61 +68,87 @@ function Auth() {
                     <Button className="btn-lg btn-dark btn-block" onClick={loginClicked}>
                         Login
                 </Button>
-                    <p onClick={() => setIsLoginView(false)}>Register here!</p>
+                    <p onClick={() => setIsLoginView(false)}>Register</p>
                 </div>
                 :
                 <div>
-                    <h1>REGISTER TO PICKBINS</h1>
-                    <FormGroup>
-                        <Label for="First_Name">First_Name</Label>
-                        <Input type="text" name="first_name" id="First_Name" placeholder="First_Name" value={first_name}
-                            onChange={evt => setFirstname(evt.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="Last_Name">Last_Name</Label>
-                        <Input type="text" name="last_name" id="Last_Name" placeholder="Last_Name" value={last_name}
-                            onChange={evt => setLastname(evt.target.value)} />
-                    </FormGroup>
+                    <h1>PICKBINS REGISTER</h1>
+                    <Row form>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="First_Name">First Name</Label>
+                                <Input type="text" name="first_name" id="First_Name" placeholder="First Name" value={first_name}
+                                    onChange={evt => setFirstname(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="Last_Name">Last Name</Label>
+                                <Input type="text" name="last_name" id="Last_Name" placeholder="Last Name" value={last_name}
+                                    onChange={evt => setLastname(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                    </Row>
                     <FormGroup>
                         <Label for="Address">Address</Label>
                         <Input type="text" name="address" id="Address" placeholder="1234 Main St" value={address}
                             onChange={evt => setAddress(evt.target.value)} />
                     </FormGroup>
-                    <FormGroup>
-                        <Label for="City">City</Label>
-                        <Input type="text" name="city" id="City" placeholder="City" value={city}
-                            onChange={evt => setCity(evt.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="Zip_Code">Zip_Code</Label>
-                        <Input type="text" name="zip_code" id="Zip_Code" placeholder="Zip_Code" value={zip_code}
-                            onChange={evt => setZip(evt.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="Country">Country</Label>
-                        <Input type="text" name="country" id="Country" placeholder="Country" value={country}
-                            onChange={evt => setCountry(evt.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="Email">Email</Label>
-                        <Input type="email" name="email" id="Email" placeholder="Email" value={email}
-                            onChange={evt => setEmail(evt.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="Username">Username</Label>
-                        <Input type="username" name="username" id="Username" placeholder="Username" value={username}
-                            onChange={evt => setUsername(evt.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="Password">Password</Label>
-                        <Input type="password" name="password" id="Password" placeholder="Password" value={password}
-                            onChange={evt => setPassword(evt.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="Password2">Confirm Password</Label>
-                        <Input type="password" name="password2" id="Password2" placeholder="Password2" value={password2}
-                            onChange={evt => setPassword2(evt.target.value)} />
-                    </FormGroup>
+                    <Row form>
+                        <Col md={5}>
+                            <FormGroup>
+                                <Label for="City">City</Label>
+                                <Input type="text" name="city" id="City" placeholder="City" value={city}
+                                    onChange={evt => setCity(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                        <Col md={3}>
+                            <FormGroup>
+                                <Label for="Zip_Code">Zip</Label>
+                                <Input type="text" name="zip_code" id="Zip_Code" placeholder="Zip" value={zip_code}
+                                    onChange={evt => setZip(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                        <Col md={4}>
+                            <FormGroup>
+                                <Label for="Country">Country</Label>
+                                <Input type="text" name="country" id="Country" placeholder="Country" value={country}
+                                    onChange={evt => setCountry(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                    <Row form>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="Email">Email</Label>
+                                <Input type="email" name="email" id="Email" placeholder="Email" value={email}
+                                    onChange={evt => setEmail(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="Username">Username</Label>
+                                <Input type="username" name="username" id="Username" placeholder="Username" value={username}
+                                    onChange={evt => setUsername(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                    <Row form>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="Password">Password</Label>
+                                <Input type="password" name="password" id="Password" placeholder="Password" value={password}
+                                    onChange={evt => setPassword(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                        <Col md={6}>
+                            <FormGroup>
+                                <Label for="Password2">Confirm Password</Label>
+                                <Input type="password" name="password2" id="Password2" placeholder="Confirm Password" value={password2}
+                                    onChange={evt => setPassword2(evt.target.value)} />
+                            </FormGroup>
+                        </Col>
+                    </Row>
                     <Button type="button" className="btn-lg btn-dark btn-block" onClick={registerClicked}>
                         Register
                 </Button>
