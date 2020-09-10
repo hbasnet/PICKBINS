@@ -11,7 +11,3 @@ urlpatterns = [
     #path('', include(router.urls)),
     path('register/', registration_view, name='register'),
 ]
-
-# urlpatterns = [
-#    path('', CustomRegisterView.as_view()),
-# ]

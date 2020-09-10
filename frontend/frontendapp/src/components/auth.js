@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './form.css';
 import { useCookies } from 'react-cookie';
+import { Link } from 'react-router-dom';
 
 function Auth() {
 
@@ -67,7 +68,7 @@ function Auth() {
                     <Button className="btn-lg btn-dark btn-block" onClick={loginClicked}>
                         Login
                 </Button>
-                    <p onClick={() => setIsLoginView(false)}>You don't have an account? Register here!</p>
+                    <p onClick={() => setIsLoginView(false)}>Register here!</p>
                 </div>
                 :
                 <div>
@@ -122,10 +123,10 @@ function Auth() {
                         <Input type="password" name="password2" id="Password2" placeholder="Password2" value={password2}
                             onChange={evt => setPassword2(evt.target.value)} />
                     </FormGroup>
-                    <Button className="btn-lg btn-dark btn-block" onClick={registerClicked}>
+                    <Button type="button" className="btn-lg btn-dark btn-block" onClick={registerClicked}>
                         Register
                 </Button>
-                    <p onClick={() => setIsLoginView(true)}>You already have an account? Login here!</p>
+                    <p onClick={() => setIsLoginView(true)}>Login here!</p>
                 </div>}
         </Form >
     );
